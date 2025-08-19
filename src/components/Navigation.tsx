@@ -7,20 +7,20 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Dispatch", href: "#dispatch", hasSubmenu: true },
-    { name: "Factoring", href: "#factoring" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Dispatch", href: "/services", hasSubmenu: true },
+    { name: "Factoring", href: "/factoring" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const dispatchServices = [
-    "Box Truck",
-    "Dry Van",
-    "Reefer",
-    "Power Only",
-    "Hotshot",
-    "Flat Bed / Step Deck"
+    { name: "Box Truck", href: "/services/box-truck" },
+    { name: "Dry Van", href: "/services/dry-van" },
+    { name: "Reefer", href: "/services/reefer" },
+    { name: "Power Only", href: "/services/power-only" },
+    { name: "Hotshot", href: "/services/hotshot" },
+    { name: "Flat Bed / Step Deck", href: "/services/flat-bed" }
   ];
 
   return (
@@ -49,11 +49,11 @@ const Navigation = () => {
                     <div className="py-2">
                       {dispatchServices.map((service) => (
                         <a
-                          key={service}
-                          href={`#${service.toLowerCase().replace(/\s+/g, '-')}`}
+                          key={service.name}
+                          href={service.href}
                           className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors duration-200"
                         >
-                          {service}
+                          {service.name}
                         </a>
                       ))}
                     </div>
@@ -109,12 +109,12 @@ const Navigation = () => {
                   <div className="ml-4 mt-2 space-y-2">
                     {dispatchServices.map((service) => (
                       <a
-                        key={service}
-                        href={`#${service.toLowerCase().replace(/\s+/g, '-')}`}
+                        key={service.name}
+                        href={service.href}
                         className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        {service}
+                        {service.name}
                       </a>
                     ))}
                   </div>
