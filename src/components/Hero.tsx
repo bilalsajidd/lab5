@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Truck, Shield, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-truck.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -54,6 +56,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-all duration-300 glow-effect group px-8 py-6 text-lg"
+              onClick={() => navigate('/contact')}
             >
               Start Trucking Dispatch
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -62,6 +65,7 @@ const Hero = () => {
               size="lg" 
               variant="outline" 
               className="border-primary/30 text-primary hover:bg-primary/10 px-8 py-6 text-lg"
+              onClick={() => navigate('/contact')}
             >
               Learn More
             </Button>

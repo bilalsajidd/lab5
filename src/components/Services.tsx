@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { 
   Truck, 
   Snowflake, 
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Package,
@@ -96,6 +98,7 @@ const Services = () => {
                   <Button 
                     variant="outline" 
                     className="w-full border-primary/30 text-primary hover:bg-primary/10 group"
+                    onClick={() => navigate('/contact')}
                   >
                     Learn More
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -119,6 +122,7 @@ const Services = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect px-8"
+              onClick={() => navigate('/contact')}
             >
               Get Started Now
             </Button>
@@ -126,6 +130,7 @@ const Services = () => {
               size="lg" 
               variant="outline" 
               className="border-primary/30 text-primary hover:bg-primary/10"
+              onClick={() => navigate('/contact')}
             >
               Request Quote
             </Button>

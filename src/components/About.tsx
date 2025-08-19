@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 import { 
   Users, 
   Award, 
@@ -10,6 +11,7 @@ import {
 } from "lucide-react";
 
 const About = () => {
+  const navigate = useNavigate();
   const stats = [
     { icon: Users, label: "Active Drivers", value: "500+" },
     { icon: Award, label: "Years Experience", value: "10+" },
@@ -68,6 +70,7 @@ const About = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect group"
+              onClick={() => navigate('/contact')}
             >
               Partner With Us
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

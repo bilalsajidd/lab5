@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { 
   CheckCircle, 
   Star, 
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 const Pricing = () => {
+  const navigate = useNavigate();
   const plans = [
     {
       name: "Basic",
@@ -137,6 +139,7 @@ const Pricing = () => {
                         : 'border-primary/30 text-primary hover:bg-primary/10'
                     }`}
                     variant={plan.popular ? "default" : "outline"}
+                    onClick={() => navigate('/contact')}
                   >
                     {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -179,6 +182,7 @@ const Pricing = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect px-8"
+              onClick={() => navigate('/contact')}
             >
               Start Free Consultation
             </Button>
@@ -186,6 +190,7 @@ const Pricing = () => {
               size="lg" 
               variant="outline" 
               className="border-primary/30 text-primary hover:bg-primary/10"
+              onClick={() => navigate('/contact')}
             >
               Call (234) 567-8900
             </Button>

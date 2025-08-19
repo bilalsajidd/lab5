@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, MessageSquare, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ContactPage = () => {
+  const navigate = useNavigate();
   const contactInfo = [
     {
       icon: Phone,
@@ -129,7 +131,7 @@ const ContactPage = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <form className="space-y-6">
+                    <form id="contact-form" className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="firstName">First Name</Label>
@@ -226,11 +228,11 @@ const ContactPage = () => {
                       Our dispatch team is available 24/7 for urgent matters.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
+                      <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10" onClick={() => navigate('/contact')}>
                         <Phone className="w-4 h-4 mr-2" />
                         Call Now
                       </Button>
-                      <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
+                      <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10" onClick={() => navigate('/contact')}>
                         <Mail className="w-4 h-4 mr-2" />
                         Email Us
                       </Button>
@@ -258,6 +260,7 @@ const ContactPage = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect px-8"
+                onClick={() => navigate('/contact')}
               >
                 Start Dispatch Service
               </Button>
@@ -265,6 +268,7 @@ const ContactPage = () => {
                 size="lg" 
                 variant="outline" 
                 className="border-primary/30 text-primary hover:bg-primary/10"
+                onClick={() => navigate('/contact')}
               >
                 Schedule Call
               </Button>

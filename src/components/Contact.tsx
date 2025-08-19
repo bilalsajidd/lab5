@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useNavigate } from "react-router-dom";
 import { 
   Phone, 
   Mail, 
@@ -13,6 +14,7 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const contactInfo = [
     {
       icon: Phone,
@@ -120,7 +122,10 @@ const Contact = () => {
                   <p className="text-muted-foreground text-sm mb-4">
                     Our dispatch team is standing by to help you find your next profitable load.
                   </p>
-                  <Button className="bg-gradient-primary hover:opacity-90 transition-opacity">
+                  <Button 
+                    className="bg-gradient-primary hover:opacity-90 transition-opacity"
+                    onClick={() => navigate('/contact')}
+                  >
                     Call Now: (234) 567-8900
                   </Button>
                 </div>
@@ -200,6 +205,7 @@ const Contact = () => {
               <Button 
                 className="w-full bg-gradient-primary hover:opacity-90 transition-opacity glow-effect group"
                 size="lg"
+                onClick={() => navigate('/contact')}
               >
                 Send Message
                 <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Layers, CheckCircle, ArrowRight, Construction, Shield, DollarSign } from "lucide-react";
 
 const FlatBed = () => {
+  const navigate = useNavigate();
   const features = [
     "Heavy Equipment Transport",
     "Construction Materials",

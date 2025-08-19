@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CreditCard, CheckCircle, ArrowRight, Clock, Shield, TrendingUp, DollarSign, Calculator, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FactoringPage = () => {
+  const navigate = useNavigate();
   const features = [
     "Same-Day Funding Available",
     "Non-Recourse Factoring",
@@ -72,6 +74,7 @@ const FactoringPage = () => {
             <Button 
               size="lg" 
               className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect px-8"
+              onClick={() => navigate('/contact')}
             >
               Get Instant Quote
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -250,6 +253,7 @@ const FactoringPage = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect px-8"
+                onClick={() => navigate('/contact')}
               >
                 Apply Now
               </Button>
@@ -257,6 +261,7 @@ const FactoringPage = () => {
                 size="lg" 
                 variant="outline" 
                 className="border-primary/30 text-primary hover:bg-primary/10"
+                onClick={() => navigate('/contact')}
               >
                 Get Quote
               </Button>

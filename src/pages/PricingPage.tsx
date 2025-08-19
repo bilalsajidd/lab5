@@ -3,8 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, X, Star, ArrowRight, DollarSign } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const PricingPage = () => {
+  const navigate = useNavigate();
   const plans = [
     {
       name: "Basic Dispatch",
@@ -155,6 +157,7 @@ const PricingPage = () => {
                           : 'border-primary/30 text-primary hover:bg-primary/10'
                       }`}
                       variant={plan.popular ? 'default' : 'outline'}
+                      onClick={() => navigate('/contact')}
                     >
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -250,6 +253,7 @@ const PricingPage = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 transition-opacity glow-effect px-8"
+                onClick={() => navigate('/contact')}
               >
                 Start Free Trial
               </Button>
@@ -257,6 +261,7 @@ const PricingPage = () => {
                 size="lg" 
                 variant="outline" 
                 className="border-primary/30 text-primary hover:bg-primary/10"
+                onClick={() => navigate('/contact')}
               >
                 Contact Sales
               </Button>
