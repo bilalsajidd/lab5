@@ -7,6 +7,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
+    { name: "Home", href: "/" },
     { name: "Dispatch", href: "/services", hasSubmenu: true },
     { name: "Factoring", href: "/factoring" },
     { name: "Pricing", href: "/pricing" },
